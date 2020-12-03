@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 char *
-mod_str ( char *str, char const *substr )
+del_substr ( char *str, char const *substr )
 {
 
     const char *match;
@@ -35,7 +35,7 @@ main( void )
 
     char *str1 = "kingu";
 
-    char *str3 = mod_str( str1, str2 );
+    char *str3 = del_substr( str1, str2 );
 
     printf("result:%s\n",  str3);
 
