@@ -5,17 +5,23 @@ char *
 find_char ( char const *source, char const *chars )
 {
 
-    /* char *match = *chars; */
+    const char *match;
+
+    match = chars;
 
     while ( *source != '\0' ) {
-        printf("char_outer:%c\n", *source);
+        /* printf("char_outer:%c\n", *source); */
 
-        while ( *chars != '\0' ) {
-            printf("char_inner:%c\n", *chars);
-            *chars++;
+        while ( *match != '\0' ) {
+            /* printf("char_inner:%c\n", *match); */
+            if ( *source == *match ) {
+                return source;
+            }
+            match++;
         }
-        *source++;
-        /* *match = *chars; */
+        
+        source++;
+        match = chars;
     }
 
     return NULL;
@@ -25,7 +31,7 @@ find_char ( char const *source, char const *chars )
 int
 main( void )
 {
-    char *str2 = "ajtu";
+    char *str2 = "ajitu";
 
     char *str1 = "kingu";
 
